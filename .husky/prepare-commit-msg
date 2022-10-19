@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+get_branch = os.popen('git branch').read()
+
+if(get_branch.split(' ')[1].startswith('hotfix')):
+    commit_name = open(sys.argv[1]).read()
+    if(commit_name.startswith("A corregir por:")):
+        print("Commit end")
+    else:
+        print("This commit not starts with A corregir por:")
+        exit (1)

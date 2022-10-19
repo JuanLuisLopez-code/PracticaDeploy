@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '                     .   '
+echo '                    / V\ '
+echo '                  / `  / '
+echo '                 <<   |  '
+echo '                 /    |  '
+echo '               /      |  '
+echo '             /        |  '
+echo '           /    \  \ /   '
+echo '          (      ) | |   '
+echo '    ________|   _/_  | | '
+echo '  <__________\______)\__)'
