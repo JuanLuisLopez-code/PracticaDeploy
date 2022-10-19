@@ -2,12 +2,13 @@
 import os
 import sys
 
-get_branch = os.popen('git branch').read()
+get_branch = os.popen('git branch')
 
-if(get_branch.split(' ')[1].startswith('hotfix')):
-    commit_name = open(sys.argv[1]).read()
-    if(commit_name.startswith("A corregir por:")):
-        print("Commit end")
-    else:
-        print("This commit not starts with A corregir por:")
-        exit (1)
+for i in get_branch:
+    if(i.startswith('*') and i.split(' ')[1].startswith('hotfix')):
+        commit_name = open(sys.argv[1]).read()
+        if(commit_name.startswith("A corregir por:")):
+            print("Commit end")
+        else:
+            print("This commit not starts with A corregir por:")
+            exit (1)
