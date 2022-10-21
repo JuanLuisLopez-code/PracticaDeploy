@@ -1,63 +1,183 @@
-<!doctype html>
-<html class="no-js" lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
 </head>
 
 <body>
+  <h1>Qué es Git?</h1>
+  <p>El sistema de control de versiones moderno más utilizado del mundo, Git es un proyecto de código abierto maduro y
+    con un mantenimiento activo que desarrolló originalmente Linus Torvalds, Git, que presenta una arquitectura
+    distribuida, es un ejemplo de DVCS (sistema de control de versiones distribuido, por sus siglas en inglés). En lugar
+    de tener un único espacio para todo el historial de versiones del software, como sucede de manera habitual en los
+    sistemas de control de versiones antaño populares, como CVS o Subversion</p>
 
-  <!-- Add your site or application content here -->
-  <header>
-    <span>2 DAW</span>
-  </header>
-  <div>
-    <a href="">Home</a>
-  </div>
-  <div>Modificacion contenido HTML</div>
-  <div>Modificar estilos CSS</div>
-  <div>Modificar atributos HTML</div>
+  <h1>Flujo de trabajo de Gitflow</h1>
+  <p>Modelo alternativo de creación de ramas en Git en el que se utilizan ramas de función y varias ramas
+    principales. Según este modelo, los desarrolladores crean una rama de función y retrasan su fusión con la rama
+    principal del tronco hasta que la función está completa
+  </p>
+  <img src="./capturas/04 Hotfix branches.svg" alt="" class="flow">
 
-  <!-- Button for modify style of <p> -->
-  <h2>Button modify text</h2>
-  <p id="demo">Hola.</p>
-  <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+  <h1>Porque usarlo</h1>
+  <p>Este flujo a pesar de poder ser un poco largo y tedioso, es una buena manera de estructurar las ramas, poder
+    trabajar en paralelo
+    a otros compañeros, tambien es una buena manera de dejar marcarda cada cambio realizado
+  </p>
 
-  <p id="demo">hotfix/mejorasV_1_0.</p>
-  <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">hotfix/mejorasV_1_0!</button>
-  
-  <footer>Footer del sitio</footer>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <h1>Explicación Práctica final</h1>
+  <p>Lo primero de todo des del usuario 1 creamos un repositorio y le haremos un commit con un readme simple para que se
+    pueda ver y así poder empezar</p>
+  <img src="./capturas/img_1.png" alt="">
 
+  <p>Ahora haremos los siguientes comandos en la misma ruta donde estábamos para descargar e implementar la estructura
+    del proyecto</p>
+  <img src="./capturas/img_2.png" alt="">
 
-  
+  <p>Ahora nos moveremos a la carpeta generada y le haremos un npm install</p>
+  <img src="./capturas/img_3.png" alt="">
 
+  <p>Y ahora haremos un npm run start para iniciar el servidor</p>
+  <img src="./capturas/img_4.png" alt="">
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <p>Ahora tocaremos la plantilla del html y la dejaremos como se nos pide</p>
+  <img src="./capturas/img_5.png" alt="">
+
+  <p>Ahora vamos a crear el primer hook con husky, para eso primero instalamos la su librería</p>
+  <img src="./capturas/img_6.png" alt="">
+
+  <p>Ahora si que vamos a crear el primer hook</p>
+  <img src="./capturas/img_7.png" alt="">
+
+  <p>Y le hacemos un add</p>
+  <img src="./capturas/img_8.png" alt="">
+
+  <p>Editamos el prepare-commit-msg</p>
+  <img src="./capturas/img_9.png" alt="">
+
+  <p>Y hacemos completamente lo mismo con el post checkout</p>
+  <img src="./capturas/img_10.png" alt="">
+
+  <p>Ahora creamos la nueva rama llamada development</p>
+  <img src="./capturas/img_11.png" alt="">
+
+  <p>Y le hacemos un push a esa rama, para que se suba a github, en cada push que hagamos luego tendremos que hacer un
+    pull en local, para que se sincronicen los cambios, ya que los merges no los estamos haciendo el local si no en
+    github</p>
+  <img src="./capturas/img_12.png" alt="">
+
+  <p>Vamos a empezar con la features</p>
+
+  <p>Crearemos 2, una llamada feature/contenidoHTML y feature/atributosHTML</p>
+  <img src="./capturas/img_13.png" alt="">
+
+  <p>En la feature/contenidoHTML, tendremos que poner algo simple que solo modifique un poco el html</p>
+  <img src="./capturas/img_14.png" alt="">
+
+  <p>Subimos la rama y en github nos saldrá la opción de hacer un pull request</p>
+  <img src="./capturas/img_15.png" alt="">
+
+  <p>Ahora ejecutaremos la pull request de feature/contenidoHTML a development</p>
+  <img src="./capturas/img_16.png" alt="">
+
+  <p>Y ahora creamos y nos movemos a la otra feature: feature/atributosHTML</p>
+  <img src="./capturas/img_17.png" alt="">
+
+  <p>Y en el archivo .css lo modificaremos un poco para ponerle algo de css al new content de la anterior features</p>
+  <img src="./capturas/img_18.png" alt="">
+
+  <p>Y ahora subimos la nueva rama con sus cambios como usuario 2, para des de github hacer un pull request</p>
+  <img src="./capturas/img_19.png" alt="">
+  <img src="./capturas/img_20.png" alt="">
+
+  <p>Creamos esa pull request y la confirmamos</p>
+  <img src="./capturas/img_21.png" alt="">
+
+  <p>Como la parte del EsLint la vi después de hacer todos lo commits, pues voy a hacer una feature nueva para el EsLint
+  </p>
+  <img src="./capturas/img_22.png" alt="">
+  <img src="./capturas/img_23.png" alt="">
+
+  <p>Ahora creamos el archivo del eslint</p>
+  <img src="./capturas/img_24.png" alt="">
+
+  <p>Y dejamos el archivo asi, +2 para identar que deje 2 espacios, y report-bad para que diga que hay error</p>
+  <img src="./capturas/img_25.png" alt="">
+
+  <p>Y para probarlo he identado mal un &lt;script&gt; del index.html y el eslint me marca el error</p>
+  <img src="./capturas/img_26.png" alt="">
+
+  <p>Y ahora hacemos el hook de pre-commit</p>
+  <img src="./capturas/img_27.png" alt="">
+
+  <p>Y si algún archivo html esta mal identado no me deja hacer el commit</p>
+  <img src="./capturas/img_28.png" alt="">
+
+  <p>Y si algún archivo html esta mal identado no me deja hacer el commit</p>
+  <img src="./capturas/img_28.png" alt="">
+
+  <p>Ahora subimos la feature al github y le hacemos pull request para unirla a development</p>
+  <img src="./capturas/img_29.png" alt="">
+  <img src="./capturas/img_30.png" alt="">
+  <img src="./capturas/img_31.png" alt="">
+
+  <p>Ahora nos vamos al usuario 3</p>
+  <p>Lo primero de todo es crear la nueva feature llamada feature/estilosCSS que lo único que haremos es que en el botón
+    de Click me al clickar la letra sea de un tamaño mas grande</p>
+  <img src="./capturas/img_32.png" alt="">
+  <img src="./capturas/img_33.png" alt="">
+
+  <p>Y hacemos un commit con esos cambios ademas de subir también la rama</p>
+  <img src="./capturas/img_34.png" alt="">
+
+  <p>Ahora des del github hacemos un pull request de la nueva feature a development</p>
+  <img src="./capturas/img_35.png" alt="">
+
+  <p>Y le hacemos un merge</p>
+  <img src="./capturas/img_36.png" alt="">
+
+  <p>A partir de la rama development creamos la nueva release llamada release1.0</p>
+  <img src="./capturas/img_37.png" alt="">
+
+  <p>Y ahora des de la rama release le hacemos un tag de v1.0 al ultimo commit</p>
+  <img src="./capturas/img_38.png" alt="">
+
+  <p>Ahora subo la rama a github</p>
+  <img src="./capturas/img_39.png" alt="">
+
+  <p>Y lo siguiente es hacer un merge con master</p>
+  <img src="./capturas/img_40.png" alt="">
+
+  <p>Y con eso a la rama master ya se le han añadido todos los commits</p>
+  <img src="./capturas/img_41.png" alt="">
+
+  <p>Volviendo al usuario 1 creara una rama hotfix</p>
+  <img src="./capturas/img_42.png" alt="">
+
+  <p>Y en el html añadiremos lo siguiente </p>
+  <img src="./capturas/img_43.png" alt="">
+
+  <p>Y lo subiremos al github</p>
+  <img src="./capturas/img_44.png" alt="">
+  <img src="./capturas/img_45.png" alt="">
+
+  <p>Ahora le hacemos un pull request con master y con development</p>
+  <img src="./capturas/img_46.png" alt="">
+  <img src="./capturas/img_47.png" alt="">
+
+  <p>Ahora creamos la pagina de gh-pages y la vaciamos</p>
+  <img src="./capturas/img_48.png" alt="">
+  <img src="./capturas/img_49.png" alt="">
+
+  <p>Y creamos el index.html y css para documentar todo el proceso</p>
+
+  <p>Por ultimo el canvas, agregamos las features y hotfix a un project</p>
+  <img src="./capturas/img_50.png" alt="">
+  <img src="./capturas/img_51.png" alt="">
 </body>
-
 </html>

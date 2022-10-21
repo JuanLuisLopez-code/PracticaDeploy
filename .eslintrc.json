@@ -1,7 +1,0 @@
-{
-    "plugins": [ "html" ],
-    "settings": {
-        "html/indent": "+2", // indentation is one tab at the beginning of the line.
-        "html/report-bad-indent": "error"
-    }
-}
